@@ -655,6 +655,11 @@ class SketchField extends PureComponent {
     canvas.on("object:moving", (e) => this.callEvent(e, this._onObjectMoving));
     canvas.on("object:scaling", (e) => this.callEvent(e, this._onObjectScaling));
     canvas.on("object:rotating", (e) => this.callEvent(e, this._onObjectRotating));
+    // TouchScreen functionality
+    canvas.on("touch:start", (e) => this.callEvent(e, this._onMouseDown));
+    canvas.on("touch:move", (e) => this.callEvent(e, this._onMouseMove));
+    canvas.on("touch:end", (e) => this.callEvent(e, this._onMouseUp));
+    canvas
     // IText Events fired on Adding Text
     // canvas.on("text:event:changed", console.log)
     // canvas.on("text:selection:changed", console.log)
